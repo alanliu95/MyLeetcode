@@ -1,4 +1,4 @@
-package com.alan;
+package com.alan.leetcode;
 
 /**
  * Hello world!

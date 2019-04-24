@@ -1,4 +1,4 @@
-package com.alan;
+package com.alan.leetcode;
 /*
 * 验证括号是否正常闭合
 * ({}) true

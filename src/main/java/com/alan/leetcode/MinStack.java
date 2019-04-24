@@ -1,5 +1,8 @@
-package com.alan;
-
+package com.alan.leetcode;
+/**
+ * leetcode 155 最小栈
+ * 最小栈，MinStack.getMin()可获取栈中最小元素
+ */
 class MinStack {
     private MyStack<Integer> s;
     private MyStack<Integer> min;
