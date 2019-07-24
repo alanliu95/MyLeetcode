@@ -14,11 +14,17 @@ public class 二叉树中序遍历 {
 
     }
 
-    private void mid_iterate(TreeNode parent) {
-        if (parent.left != null) mid_iterate(parent.left);
-        list.add(parent.val);
-        if (parent.right != null) mid_iterate(parent.right);
-        return;
+//    private void mid_iterate(TreeNode parent) {
+//        if (parent.left != null) mid_iterate(parent.left);
+//        list.add(parent.val);
+//        if (parent.right != null) mid_iterate(parent.right);
+//        return;
+//    }
+    private void mid_iterate(TreeNode x) {
+        if(x == null) return;
+        mid_iterate(x.left);
+        list.add(x.val);
+        mid_iterate(x.right);
     }
 }
 
