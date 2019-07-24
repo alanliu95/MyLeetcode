@@ -95,7 +95,7 @@ public class SortMethod {
     public static void merge(Comparable[] a, int lo, int mid, int hi){
         for(int i=lo;i<=hi;i++)
             aux[i]=a[i];
-        int index1=lo,index2=mid+1,index=0;
+        int index1=lo,index2=mid+1,index=lo;
         while(index1<=mid||index2<=hi){
             if(index1>mid) a[index++]=aux[index2++];
             else if(index2>hi) a[index++]=aux[index1++];
