@@ -7,10 +7,10 @@ import java.util.Arrays;
 
 public class IntegerProxy {
     public static void main(String[] args){
-        Object elements[]=new Object[2];
-        elements[0]=Proxy.newProxyInstance(null,Integer.class.getInterfaces(),new Invoker(1));
-        elements[1]=Proxy.newProxyInstance(null,Integer.class.getInterfaces(),new Invoker(2));
-        System.out.println(elements[0].getClass().getInterfaces()[0]);
+        Object[] elements=new Object[2];
+        elements[0]= Proxy.newProxyInstance(null,Integer.class.getInterfaces(),new IntegerInvoker(1));
+        elements[1]= Proxy.newProxyInstance(null,Integer.class.getInterfaces(),new IntegerInvoker(2));
+        //System.out.println(elements[0].getClass().getInterfaces()[0]);
 //        System.out.println(elements[0].toString());
         Arrays.binarySearch(elements,2);
 
@@ -18,10 +18,10 @@ public class IntegerProxy {
 
 }
 
-class Invoker implements InvocationHandler{
+class IntegerInvoker implements InvocationHandler{
     private Object target;
 
-    public Invoker(Object target) {
+    public IntegerInvoker(Object target) {
         this.target = target;
     }
 
