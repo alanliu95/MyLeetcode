@@ -11,6 +11,7 @@ class MinStack {
         s=new MyStack<Integer>();
         min=new MyStack<Integer>();
         //min.push(Integer.MAX_VALUE);
+        //System.out.println();
     }
 
     public void push(int x) {
