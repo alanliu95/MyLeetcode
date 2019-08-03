@@ -1,5 +1,4 @@
 package com.alan.offer;
-
 public class 二叉树的深度 {
     //方法垃圾
     public class Solution {
