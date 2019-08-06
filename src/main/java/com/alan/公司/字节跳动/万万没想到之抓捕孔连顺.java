@@ -1,4 +1,4 @@
-package com.alan;
+package com.alan.公司.字节跳动;
 
 
 import java.util.Scanner;

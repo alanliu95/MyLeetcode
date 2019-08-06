@@ -8,10 +8,52 @@ public class 字符串的排列 {
         List<String> list=new Solution().Permutation(str);
         System.out.println(list);
     }
-    public static class Solution {
+    public static class Solution2 {
+        //结果
         ArrayList<String> list;
         //HashSet<Character> set;
+        //记录元素是否使用过
         boolean[] used;
+        //按顺序记录已被使用的元素
+        char[] tmp;
+        int N;
+        public ArrayList<String> Permutation(String str) {
+            list=new ArrayList();
+            if(str==null||str.length()==0) return list;
+
+            char[] chars=str.toCharArray();
+            N=chars.length;
+            used=new boolean[N];
+            tmp=new char[N];
+            Arrays.sort(chars);
+            compute(chars,0);
+            return list;
+        }
+        void compute(char[] chars,int size){
+            if(size==N){
+                list.add(new String(tmp));
+                return;
+            }
+            Set<Character> set=new HashSet<>();
+            for(int i=0;i<N;i++){
+                if(!used[i] && !set.contains(chars[i])){
+                    set.add(chars[i]);
+                    used[i]=true;
+                    tmp[size]=chars[i];
+                    compute(chars,size+1);
+                    used[i]=false;
+                }
+            }
+
+        }
+    }
+    public static class Solution {
+        //结果
+        ArrayList<String> list;
+        //HashSet<Character> set;
+        //记录元素是否使用过
+        boolean[] used;
+        //按顺序记录已被使用的元素
         LinkedList<Character> deque;
         int N;
         public ArrayList<String> Permutation(String str) {

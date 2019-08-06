@@ -1,4 +1,4 @@
-package com.alan;
+package com.alan.公司.大疆;
 
 public class Dji1 {
     public static void main(String[] args) {
