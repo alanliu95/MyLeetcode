@@ -17,8 +17,9 @@ public class 找零 {
         else
             dp=new int[target+1];
         int[] coins=new int[]{1,4,16,64};
-        dp[0]=0;dp[1]=1;dp[2]=2; dp[3]=3; dp[4]=1;dp[16]=1;dp[64]=1;
-        for (int i = 5; i <=target ; i++) {
+        //只需要初始化dp[0]
+        dp[0]=0;
+        for (int i = 1; i <=target ; i++) {
             dp[i]=Integer.MAX_VALUE;
             for(int j=0;j<coins.length;j++){
                 if(i<coins[j]) continue;
