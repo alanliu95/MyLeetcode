@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * 给定一个没有重复数字的序列，返回其所有可能的全排列。
+ */
 public class 全排列 {
-}
-
-class 全排列Solution {
     public List<List<Integer>> permute(int[] nums) {
         int len=nums.length;
 
@@ -20,6 +20,7 @@ class 全排列Solution {
         generatePermution(nums,visited,0,len,path,res);
         return res;
     }
+
     public void generatePermution(int[] nums, boolean[] visited, int currSize, int len, Stack<Integer> path, List<List<Integer>> res){
         if(currSize==len){
             res.add(new ArrayList<Integer>(path));
@@ -37,5 +38,4 @@ class 全排列Solution {
 
         }
     }
-
 }

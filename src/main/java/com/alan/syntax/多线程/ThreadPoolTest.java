@@ -1,4 +1,4 @@
-package com.alan.syntax;
+package com.alan.syntax.多线程;
 
 import java.io.File;
 import java.util.ArrayList;

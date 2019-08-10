@@ -1,21 +1,10 @@
 package com.alan.公司.大疆;
 
-public class Dji1 {
+/**
+ * 机器人每次从第0点出发，需要依次到其他点打卡，两个点之间至少有一条路径连通
+ */
+public class 机器人比赛最短时间 {
     public static void main(String[] args) {
-//         double result;
-//        double[] arr1=new double[]{4,3,3};
-//        double[] arr2=new double[]{333,77,100,50};
-//        double coffe=60*arr1[1]*arr1[2];
-//        double count=0;
-//        for(double e:arr2)
-//            count+=e;
-//        if(coffe-count>0){
-//            result=count/arr1[2];
-//        }
-//        else{
-//             result=60*arr1[2]+count-coffe;
-//        }
-//        System.out.println(result);
         int[][] arr=new int[][]{{0,15,0,50},{0,0,15,0},{0,0,0,10},{0,0,0,0}};
         System.out.println(arr);
         int[] target=new int[]{2,1,3};
