@@ -1,15 +1,6 @@
 package com.alan.offer;
 
 public class 合并两个排序的链表 {
-    public class ListNode {
-        int val;
-        ListNode next = null;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
-    public class Solution {
         public ListNode Merge(ListNode list1,ListNode list2) {
             ListNode p1=list1;
             ListNode p2=list2;
@@ -31,5 +22,13 @@ public class 合并两个排序的链表 {
             }
             return dummy.next;
         }
+
+}
+class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
     }
 }
