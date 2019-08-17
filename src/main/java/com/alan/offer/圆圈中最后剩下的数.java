@@ -14,6 +14,7 @@ public class 圆圈中最后剩下的数 {
         }
         int index=0;
         while(list.size()>1){
+            //下一个被移除节点的索引
             index = (index + m - 1) % list.size();
             list.remove(index);
 
