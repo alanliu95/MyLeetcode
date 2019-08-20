@@ -13,7 +13,8 @@ public class Singleton1 {
                 }
             }
         }
-        //两种情况下，会运行到这里，1.变量instance早已完成初始化（第一个if 不成立），2.进入if语句，其他线程已经获取锁实现初始化，（第二个if不成立）
+        //两种情况下，会运行到这里，1.变量instance早已完成初始化（第一个if 不成立），
+        // 2.进入if语句，其他线程已经获取锁实现初始化，第二个if不成立
         return instance;
     }
 }
@@ -29,9 +30,11 @@ class Singleton2 {
 
 class Singleton3 {
     private Singleton3(){}
+    //内部类只有被调用时，才被jvm加载
     private static class Nested{
         private static Singleton3 instance=new Singleton3();
     }
+    //被调用时，触发jvm 加载内部类
     public static Singleton3 getInstance(){
         return Nested.instance;
     }
