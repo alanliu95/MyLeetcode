@@ -1,4 +1,4 @@
-package com.alan.ds;
+package com.alan.ds.排序;
 
 public class SortMethod {
     public static void main( String[] args )
@@ -22,7 +22,7 @@ public class SortMethod {
         return a[i].compareTo(a[j])<0;
     }
 
-    //插入排序
+    //选择排序
     public static void selectionSort(Comparable[] a){
         int N=a.length;
         for(int i=0;i<N;i++){
@@ -44,7 +44,7 @@ public class SortMethod {
         }
     }
 
-    //选择排序 简洁写法
+    //插入排序 简洁写法
     public static void InsertionSort2(Comparable[] a){
         for(int i=1;i<a.length;i++){
             for(int j=i; j>0&&less(a,j,j-1);j--){
