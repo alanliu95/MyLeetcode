@@ -3,6 +3,10 @@ package com.alan.syntax.多线程;
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * CountDownLatch 某个（或者多个）线程先被阻塞，等待其他线程都到达某处后，继续运行。
+ * “其他进程”释放信号后，不会被阻塞继续运行
+ * countDown() await()
+ *不可重复使用
  * 第三个线程阻塞，直到第一个 第二个线程事件发生
  */
 public class CountDownLatchTest {

@@ -1,8 +1,13 @@
 package com.alan.syntax.多线程;
 
+import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * 多个线程都到达某个位置时才放行，如果部分线程提前到达会被阻塞
+ * 可重复使用
+ */
 public class CyclicBarrierTest {
     public static void main(String[] args) {
         int N = 4;
@@ -28,7 +33,7 @@ public class CyclicBarrierTest {
         public void run() {
             System.out.println("线程" + Thread.currentThread().getName() + "正在写入数据...");
             try {
-                Thread.sleep(5000);      //以睡眠来模拟写入数据操作
+                Thread.sleep(new Random().nextInt(5000));      //以睡眠来模拟写入数据操作
                 System.out.println("线程" + Thread.currentThread().getName() + "写入数据完毕，等待其他线程写入完毕");
                 cyclicBarrier.await();
             } catch (InterruptedException e) {

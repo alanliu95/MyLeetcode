@@ -20,6 +20,7 @@ public class 外卖满减 {
         //帮助实现只用一种菜品的情况
         dp[0] = true;
         for (int price : prices) {
+            //需要保证每个菜品只使用一次，通过逆序避免重复使用
             for (int j = dp.length - 1; j >= 0; j--) {
                 if (dp[j]) dp[j + price] = true;
             }
