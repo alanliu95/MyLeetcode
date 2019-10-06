@@ -34,11 +34,11 @@ public class 实现二叉树先序中序和后序遍历 {
             if (temp2 > 0)
                 nodes[temp1 - 1].right = nodes[temp2 - 1];
         }
-        preOrder(root);
+        preOrder_non_recursion(root);
         System.out.println();
-        inOrder(root);
+        inOrder_non_recursion(root);
         System.out.println();
-        postOrder(root);
+        postOrder_non_recursion(root);
         System.out.println();
 
     }
@@ -82,17 +82,14 @@ public class 实现二叉树先序中序和后序遍历 {
 //        }
 //        //System.out.println();
 //    }
+    public static void preOrder(Node root) {
+        if (root == null)
+            return;
+        System.out.print(root.val + " ");
+        preOrder(root.left);
+        preOrder(root.right);
 
-
-//    public static void  inOrder(Node root){
-//        if(root==null)
-//            return;
-//        inOrder(root.left);
-//        System.out.print(root.val+" ");
-//        inOrder(root.right);
-//
-//    }
-
+    }
 
     //4 5 2 6 8 7 3 1
     public static void postOrder(Node root) {
@@ -103,14 +100,58 @@ public class 实现二叉树先序中序和后序遍历 {
         System.out.print(root.val + " ");
     }
 
-    public static void preOrder(Node root) {
-        if (root == null)
-            return;
-        System.out.print(root.val + " ");
-        preOrder(root.left);
-        preOrder(root.right);
+
+    public static void preOrder_non_recursion(Node root) {
+        Stack<Node> stack = new Stack<>();
+        while (root != null || stack.size() > 0) {
+            if (root != null) {
+                System.out.print(root.val + " ");
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop().right;
+            }
+        }
 
     }
+
+    public static void inOrder_non_recursion(Node root) {
+        Stack<Node> stack = new Stack<>();
+        while (root != null || stack.size() > 0) {
+            if (root != null) {
+
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+                System.out.print(root.val + " ");
+                root = root.right;
+            }
+        }
+
+    }
+
+    public static void postOrder_non_recursion(Node root) {
+        Stack<Node> s1 = new Stack<>();
+        Stack<Node> s2 = new Stack<>();
+        if (root != null) {
+            s1.push(root);
+            while (!s1.isEmpty()) {
+                root = s1.pop();
+                s2.push(root);
+                if (root.left != null)
+                    s1.push(root.left);
+                if (root.right != null)
+                    s1.push(root.right);
+            }
+            while (!s2.isEmpty()) {
+                root = s2.pop();
+                System.out.print(root.val + " ");
+            }
+        }
+    }
+
+
 
     static class Node {
         int val;
