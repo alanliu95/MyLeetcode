@@ -7,14 +7,30 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ThreadPoolTest {
     public static void main(String[] args) {
-        test2();
+//        test2();
         //MatchCounter t= new MatchCounter(new File("E:\\Liusong\\JAVA\\dd"),"hello",null);
         //System.out.println(t.search(new File("E:\\Liusong\\JAVA\\dd\\1.txt"),"hello"));
+        test3();
     }
 
+    public static void test3() {
+        AtomicInteger i = new AtomicInteger(0);
+        ExecutorService executor = Executors.newFixedThreadPool(10);
+        for (int j = 0; j < 20; j++) {
+            Future future = executor.submit(() -> {
+                System.out.printf("第%d个线程\n", i.getAndIncrement());
+            });
+        }
+//        try{
+//            System.out.println(future.get());
+//        }catch (Exception e){}
+        executor.shutdown();
+        System.out.println(i.get());
+    }
     public static void test2() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<Integer> future=executor.submit(()->{ return 1+3;});

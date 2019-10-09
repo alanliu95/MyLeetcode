@@ -1,4 +1,4 @@
-package com.alan.syntax;
+package com.alan.syntax.集合;
 
 import java.util.ArrayList;
 import java.util.List;
