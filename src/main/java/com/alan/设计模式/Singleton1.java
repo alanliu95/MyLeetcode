@@ -1,9 +1,28 @@
 package com.alan.设计模式;
 
+//懒汉式，线程安全
+class Singleton0 {
+    private static Singleton0 instance;
+
+    private Singleton0() {
+    }
+
+    public static synchronized Singleton0 getInstance() {
+        if (instance == null) {
+            instance = new Singleton0();
+        }
+        return instance;
+    }
+
+}
+
 //双重检验锁模式
 //可能会由于虚拟机的优化等导致赋值操作先执行,而构造函数还没完成,
 // 导致其他线程访问得到singleton变量不为null,但初始化还未完成,导致程序崩溃。
 public class Singleton1 {
+    public static void main(String[] args) {
+        System.out.println(Singleton3.getInstance());
+    }
     private Singleton1(){}
 
     //volatile 不可丢
