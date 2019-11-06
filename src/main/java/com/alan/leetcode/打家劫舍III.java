@@ -1,4 +1,4 @@
-package com.alan;
+package com.alan.leetcode;
 
 
 public class 打家劫舍III {
@@ -22,15 +22,5 @@ public class 打家劫舍III {
         root.val = Math.max(root.val + root.left.left.val + root.left.right.val + root.right.left.val
                 + root.right.right.val, root.left.val + root.right.val);
         return root;
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
     }
 }

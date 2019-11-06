@@ -10,6 +10,7 @@ public class 平衡二叉树 {
         new 平衡二叉树().IsBalanced_Solution(root);
     }
     public boolean IsBalanced_Solution(TreeNode root) {
+        //空树
         if(root==null) return true;
         return Math.abs(dfs_max(root.left) - dfs_max(root.right)) <= 1
                 && IsBalanced_Solution(root.left)

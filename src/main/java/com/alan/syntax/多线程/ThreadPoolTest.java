@@ -11,16 +11,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ThreadPoolTest {
     public static void main(String[] args) {
-//        test2();
+        test2();
         //MatchCounter t= new MatchCounter(new File("E:\\Liusong\\JAVA\\dd"),"hello",null);
         //System.out.println(t.search(new File("E:\\Liusong\\JAVA\\dd\\1.txt"),"hello"));
-        test3();
+//        test3();
     }
 
     public static void test3() {
         AtomicInteger i = new AtomicInteger(0);
         ExecutorService executor = Executors.newFixedThreadPool(10);
-        for (int j = 0; j < 20; j++) {
+        for (int j = 0; j < 10; j++) {
             Future future = executor.submit(() -> {
                 System.out.printf("第%d个线程\n", i.getAndIncrement());
             });
