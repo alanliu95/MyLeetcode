@@ -4,9 +4,9 @@ package com.alan.leetcode;
 * ({}) true
 * ({)} false
 * */
-class ParenthesisValid {
+public class 有效的括号 {
     public static void main( String[] args ){
-        ParenthesisValid p=new ParenthesisValid();
+        有效的括号 p = new 有效的括号();
         System.out.println(p.isValid("()"));
     }
 

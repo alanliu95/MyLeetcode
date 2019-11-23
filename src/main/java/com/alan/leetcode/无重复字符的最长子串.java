@@ -1,9 +1,10 @@
 package com.alan.leetcode;
 import java.util.*;
-public class LengthOfLongestSubstring {
+
+public class 无重复字符的最长子串 {
     public static void main(String[] args){
         String s="abcabcbb";
-        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring(s));
+        System.out.println(new 无重复字符的最长子串().lengthOfLongestSubstring(s));
     }
     public int lengthOfLongestSubstring(String s) {
         if(s.length()==0) return 0;

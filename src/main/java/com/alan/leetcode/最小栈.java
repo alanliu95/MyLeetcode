@@ -3,11 +3,11 @@ package com.alan.leetcode;
  * leetcode 155 最小栈
  * 最小栈，MinStack.getMin()可获取栈中最小元素
  */
-class MinStack {
+class 最小栈 {
     private MyStack<Integer> s;
     private MyStack<Integer> min;
     /** initialize your data structure here. */
-    public MinStack() {
+    public 最小栈() {
         s=new MyStack<Integer>();
         min=new MyStack<Integer>();
         //min.push(Integer.MAX_VALUE);
