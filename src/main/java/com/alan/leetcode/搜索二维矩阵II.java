@@ -16,4 +16,23 @@ public class 搜索二维矩阵II {
         }
         return false;
     }
+
+    public boolean searchMatrix2022(int[][] matrix, int target) {
+        // 空数组
+        if (matrix.length == 0)
+            return false;
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int r = 0, col = cols - 1;
+        while (r < rows && col >= 0) {
+            if (target > matrix[r][col]) {
+                r++;
+            } else if (target < matrix[r][col]) {
+                col--;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
 }

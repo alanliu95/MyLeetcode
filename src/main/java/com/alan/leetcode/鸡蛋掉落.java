@@ -37,4 +37,22 @@ public class 鸡蛋掉落 {
 
         return cache.get(key);
     }
+
+    // wrong 太难了
+    public int superEggDrop2(int k, int n) {
+        int count=0;
+        int nn=n;
+        int kk=k;
+        while (kk>1){
+            if (nn==1){
+                break;
+            }
+            nn=(nn+1)/2;
+            kk--;
+            count++;
+        }
+        if (nn==1)
+            return k-kk;
+        return count+nn-1;
+    }
 }
